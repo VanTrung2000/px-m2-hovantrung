@@ -1,0 +1,80 @@
+﻿@model QuanLiSach.Viewmodel.HomeIndex
+<form method="post" asp-action="Create">
+    <div class="border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="container">
+            <div class="form-group row">
+                <h2 class="text-info">Add Book</h2>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <div class="row form-group">
+                        <div class="col-4">
+                            <label asp-for="Book.Namebook"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Book.Namebook" class="form-control" />
+                            <span asp-validation-for="Book.Namebook" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-4">
+                            <label asp-for="Book.Author"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Book.Author" class="form-control" />
+                            <span asp-validation-for="Book.Author" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-4">
+                            <label asp-for="Book.Despition"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Book.Despition" class="form-control" />
+                            <span asp-validation-for="Book.Despition" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-4">
+                            <label asp-for="Book.Publishingyear"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Book.Publishingyear" class="form-control" />
+                            <span asp-validation-for="Book.Publishingyear" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-4">
+                            <label asp-for="Book.CategorybookId"></label>
+                        </div>
+                        <div class="col-8">
+                            <select asp-for="Book.CategorybookId" asp-items="@Model.CategoriesSelectList" class="form-control">
+                                <option disabled selected>Vui lòng chọn Category</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col">
+                            <input type="submit" value="Submit" class="btn btn-info" />
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-success">Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            </div>
+        </div>
+    </div>
+</form>
+@section ScriptsValidate {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+

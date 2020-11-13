@@ -1,0 +1,62 @@
+﻿@model Book
+<form method="post" asp-action="Edit">
+    <div class="border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="container">
+            <div class="form-group row">
+                <h2 class="text-info">Add Book</h2>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <div class="row form-group">
+                        <div class="col-4">
+                            <label asp-for="Namebook"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Namebook" class="form-control" />
+                            <span asp-validation-for="Namebook" class="text-danger"></span>
+                        </div>
+                        <div class="col-4">
+                            <label asp-for="Author"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Author" class="form-control" />
+                            <span asp-validation-for="Author" class="text-danger"></span>
+                        </div>
+                        <div class="col-4">
+                            <label asp-for="Publishingyear"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Publishingyear" class="form-control" />
+                            <span asp-validation-for="Publishingyear" class="text-danger"></span>
+                        </div>
+                        <div class="col-4">
+                            <label asp-for="CategorybookId"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="CategorybookId" class="form-control" />
+                            <span asp-validation-for="CategorybookId" class="text-danger"></span>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col">
+                                <input type="submit" value="Submit" class="btn btn-info" />
+                            </div>
+                            <div class="col">
+                                <a asp-action="Index" class="btn btn-success">Back</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</form>
+@section ScriptsValidate {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+
